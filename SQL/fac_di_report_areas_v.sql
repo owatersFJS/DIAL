@@ -1,0 +1,30 @@
+create or replace view fac_di_report_areas_v as
+ select c.id,
+	   c.category_code report_area_code,
+       c.category_name report_area,
+       c.description,
+       c.start_date_active,
+       c.end_date_active,
+       c.enabled_flag,
+       c.seeded_flag,
+       c.apex_icon,
+       c.img_url,
+       c.display_seq,
+       c.deletion_date,
+       c.attribute_context,
+       c.attribute_01,
+       c.attribute_02,
+       c.attribute_03,
+       c.attribute_04,
+       c.attribute_05,
+       c.n_attribute_01,
+       c.n_attribute_02,
+       c.d_attribute_01,
+       c.d_attribute_02,
+       c.created,
+       c.created_by,
+       c.updated,
+       c.updated_by 
+   from fac_di_report_categories c
+  where c.parent_category_id is null
+   ;

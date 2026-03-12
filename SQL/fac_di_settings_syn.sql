@@ -1,0 +1,1 @@
+create or replace synonym fac_di_settings for fac_di_settings_v;

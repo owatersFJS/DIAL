@@ -1,0 +1,1 @@
+create index fac_di_reports_i1 on fac_di_reports (category_id);

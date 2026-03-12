@@ -1,0 +1,14 @@
+create or replace trigger fac_di_access_control_biu
+    before insert or update 
+    on fac_di_access_control
+    for each row
+begin
+    if inserting then
+        :new.created := sysdate;
+        :new.created_by := coalesce(sys_context('APEX$SESSION','APP_USER'),user);
+    end if;
+    :new.updated := sysdate;
+    :new.updated_by := coalesce(sys_context('APEX$SESSION','APP_USER'),user);
+    :new.entity_type := upper(:new.entity_type);
+end fac_di_access_control_biu;
+/

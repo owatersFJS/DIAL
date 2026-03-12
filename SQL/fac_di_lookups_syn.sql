@@ -1,0 +1,1 @@
+create or replace synonym fac_di_lookups for fac_di_lookups_v;

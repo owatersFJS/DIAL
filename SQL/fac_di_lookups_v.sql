@@ -1,0 +1,31 @@
+  create or replace force editionable view fac_di_lookups_v as 
+  select l.id,
+l.lookup_type,
+l.lookup_code,
+l.meaning,
+l.description,
+l.tags,
+l.display_seq,
+l.icon,
+l.enabled_flag,
+l.seeded_flag,
+l.start_date_active,
+l.end_date_active,
+l.attribute_context,
+l.attribute_01,
+l.attribute_02,
+l.attribute_03,
+l.attribute_04,
+l.attribute_05,
+l.n_attribute_01,
+l.n_attribute_02,
+l.d_attribute_01,
+l.d_attribute_02,
+l.created,
+l.created_by,
+l.updated,
+l.updated_by
+from fac_lookups l,
+     fac_modules m
+where l.module_id = m.id
+  and m.module_code = 'DATA_INSIGHTS';
